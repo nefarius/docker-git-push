@@ -1,5 +1,5 @@
 FROM alpine:latest
-MAINTAINER  William Edwards <shadowapex@gmail.com>
+LABEL maintainer="Benjamin Höglinger-Stelzer <nefarius@dhmx.at>"
 
 ENV GIT_REPO=""
 ENV GIT_BRANCH="master"
@@ -11,7 +11,7 @@ ENV SSH_KEY=""
 ENV FILES_TO_COMMIT="."
 ENV SLEEP_INTERVAL="600"
 
-RUN apk update && \
+RUN apk update --no-cache && \
         apk add git && \
 	apk add openssh-client
 
